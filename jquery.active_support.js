@@ -22,4 +22,16 @@
     return !$.isBlank.apply(this, arguments);
   }
 
+  $.isLink = $.isURL = function(){
+
+  }
+
+  $.isPhone = $.isPhoneNumber = function(){
+
+  }
+
+  $.isAddress = function(){
+
+  }
+
 })(jQuery);

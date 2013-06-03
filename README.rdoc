@@ -1,0 +1,35 @@
+== Usage
+
+Include in the head of your HTML page.
+
+== Depencies
+
+jQuery 1.4.x
+
+== Methods
+
+Provides support utility methods for common JS assertions.
+
+Note: This is NOT the same function as a jQuery('selector').is(':blank').
+
+=== isBlank
+
+    $.isBlank(" ")       //true
+    $.isBlank("")        //true
+    $.isBlank("\n")      //true
+    $.isBlank("a")       //false
+     
+    $.isBlank(null)      //true
+    $.isBlank(undefined) //true
+    $.isBlank([])        //true
+
+=== isPresent (contrast to isBlank)
+
+    $.isPresent(" ")       //false
+    $.isPresent("")        //false
+    $.isPresent("\n")      //false
+    $.isPresent("a")       //true
+     
+    $.isPresent(null)      //false
+    $.isPresent(undefined) //false
+    $.isPresent([])        //false

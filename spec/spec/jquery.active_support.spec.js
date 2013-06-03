@@ -4,7 +4,7 @@ describe("$.isBlank", function() {
     expect($.isBlank).toBeDefined();
   });
 
-  describe("#isBlank", function() {
+  describe(".isBlank", function() {
     it("arrays", function() {
       expect($.isBlank([])).toBeTruthy();
       expect($.isBlank(['foo', 'bar'])).toBeFalsy();
@@ -21,7 +21,7 @@ describe("$.isBlank", function() {
     });
   });
 
-  describe("#isPresent", function() {
+  describe(".isPresent", function() {
     it("arrays", function() {
       expect($.isPresent([])).toBeFalsy();
       expect($.isPresent(['foo', 'bar'])).toBeTruthy();
