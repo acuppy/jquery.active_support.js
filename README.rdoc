@@ -17,7 +17,7 @@ Note: This is NOT the same function as a jQuery('selector').is(':blank').
     $.isBlank(undefined) //true
     $.isBlank([])        //true
 
-=== $.isPresent (contrast to isBlank)
+==== $.isPresent (contrast to $.isBlank)
 
     $.isPresent(" ")       //false
     $.isPresent("")        //false
