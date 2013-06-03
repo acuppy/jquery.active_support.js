@@ -1,13 +1,19 @@
-== Usage
+=== Usage
 Include in the head of your HTML page.
 
-== Depencies
+=== Depencies
 jQuery 1.4.x
 
-== Methods
+=== Testing
+I am using Jasmine.  To run the tests, clone the repository and open ./spec/SpecRunner.html in any browser.  For more info see http://pivotal.github.io/jasmine/
+
+=== Contributing
+I would like to expand the available utility/support functions.  Submit a pull request with your patch and the appropriate Jasmine test.  I'll gladly merge your changes into master :)
+
+=== Methods
 Provides support utility methods for common JS assertions.
 
-=== isBlank
+==== $.isBlank
 Note: This is NOT the same function as a jQuery('selector').is(':blank').
 
     $.isBlank(" ")       //true
@@ -19,7 +25,7 @@ Note: This is NOT the same function as a jQuery('selector').is(':blank').
     $.isBlank(undefined) //true
     $.isBlank([])        //true
 
-=== isPresent (contrast to isBlank)
+=== $.isPresent (contrast to isBlank)
 
     $.isPresent(" ")       //false
     $.isPresent("")        //false
