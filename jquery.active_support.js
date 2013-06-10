@@ -19,7 +19,7 @@
     Evaluates if an object or element is not blank
     @return Boolean
   */
-  $.isPresent = function(){
+  $.isPresent = $.isNotEmpty = function(){
     return !$.isBlank.apply(this, arguments);
   }
 
@@ -60,10 +60,16 @@
     return window.location.replace;
   })();
 
+  $.isLink = $.isURL = function(url){
+    return true;
   }
 
-  $.isAddress = function(){
+  $.isPhone = $.isPhoneNumber = function(number){
+    return true;
+  }
 
+  $.isAddress = function(address){
+    return true;
   }
 
 })(jQuery);

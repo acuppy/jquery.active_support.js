@@ -34,6 +34,12 @@ describe("$.isBlank", function() {
   });
 });
 
+describe("$.isEmpty", function() {
+  it("exists", function() {
+    expect($.isEmpty).toBeDefined();
+  });
+});
+
 describe("$.isPresent", function() {
   describe("arrays", function() {
     it("should be present", function(){
@@ -67,6 +73,12 @@ describe("$.isPresent", function() {
     it("should be present", function() {
       expect( $.isPresent( $('div.foo_bar') ) ).toBeFalsy();
     });
+  });
+});
+
+describe("$.isNotEmpty", function() {
+  it("exists", function() {
+    expect($.isNotEmpty).toBeDefined();
   });
 });
 
