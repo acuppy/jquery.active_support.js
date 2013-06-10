@@ -1,33 +1,71 @@
 describe("$.isBlank", function() {
-  it("arrays", function() {
-    expect($.isBlank([])).toBeTruthy();
-    expect($.isBlank(['foo', 'bar'])).toBeFalsy();
+  describe("arrays", function() {
+    it("should be blank", function(){
+      expect($.isBlank([])).toBeTruthy();
+    });
+
+    it("should be blank", function(){
+      expect($.isBlank(['foo', 'bar'])).toBeFalsy();
+    });
   });
 
-  it("strings", function() {
-    expect($.isBlank('')).toBeTruthy();
-    expect($.isBlank('foo bar')).toBeFalsy();
+  describe("strings", function() {
+    it("should be blank", function(){
+      expect($.isBlank('')).toBeTruthy();
+    });
+
+    it("should be blank", function(){
+      expect($.isBlank('foo bar')).toBeFalsy();
+    });
   });
 
-  it("objects", function() {
-    expect($.isBlank({})).toBeTruthy();
-    expect($.isBlank({ foo: 'bar' })).toBeFalsy();
+  describe("objects", function() {
+    it("should be blank", function(){
+      expect($.isBlank({})).toBeTruthy();
+    });
+
+    it("should be blank", function(){
+      expect($.isBlank({ foo: 'bar' })).toBeFalsy();
+    });
+
+    it("should be blank", function() {
+      expect( $.isBlank( $('div.foo_bar') ) ).toBeTruthy();
+    });
   });
 });
 
 describe("$.isPresent", function() {
-  it("arrays", function() {
-    expect($.isPresent([])).toBeFalsy();
-    expect($.isPresent(['foo', 'bar'])).toBeTruthy();
+  describe("arrays", function() {
+    it("should be present", function(){
+      expect($.isPresent([])).toBeFalsy();
+    });
+
+    it("should be present", function(){
+      expect($.isPresent(['foo', 'bar'])).toBeTruthy();
+    });
   });
 
-  it("strings", function() {
-    expect($.isPresent('')).toBeFalsy();
-    expect($.isPresent('foo bar')).toBeTruthy();
+  describe("strings", function() {
+    it("should be present", function(){
+      expect($.isPresent('')).toBeFalsy();
+    });
+
+    it("should be present", function(){
+      expect($.isPresent('foo bar')).toBeTruthy();
+    });
   });
 
-  it("objects", function() {
-    expect($.isPresent({})).toBeFalsy();
-    expect($.isPresent({ foo: 'bar' })).toBeTruthy();
+  describe("objects", function() {
+    it("should be present", function(){
+      expect($.isPresent({})).toBeFalsy();
+    });
+
+    it("should be present", function(){
+      expect($.isPresent({ foo: 'bar' })).toBeTruthy();
+    });
+
+    it("should be present", function() {
+      expect( $.isPresent( $('div.foo_bar') ) ).toBeFalsy();
+    });
   });
 });

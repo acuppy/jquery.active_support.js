@@ -5,11 +5,12 @@
     @author http://github.com/jtarchie
     @return Boolean
   */
-  $.isBlank = function(object) {
+  $.isBlank = $.isEmpty = function(object) {
     return (
       ($.isPlainObject(object) && $.isEmptyObject(object)) ||
       ($.isArray(object) && object.length == 0) ||
-      (typeof(object) == "string" && $.trim(object) === "") ||
+      (object instanceof jQuery && object.length == 0) ||
+      ($.type(object) == "string" && $.trim(object) === "") ||
       (!object)
     );
   };
