@@ -42,12 +42,12 @@
       }
     });
 
-    if( $.isBlank(included) || $.grep( included, function(elm, i){
+    if( $.isBlank(included) || $.isPresent( $.grep( included, function(elm, i){
       switch( $.type(elm) ){
         case 'string': return elm == url; break;
         case 'regexp': return url.search(elm) != -1; break;
       }
-    }).length > 0 ){
+    })) ){
       if( $.type(opt.confirm) == 'string' ){
         if( window.confirm(opt.confirm) ) $.redirect.runner(url); 
         return;
