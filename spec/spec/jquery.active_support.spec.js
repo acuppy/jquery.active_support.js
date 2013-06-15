@@ -91,7 +91,7 @@ describe("$.isPresent", function() {
     });
   });
 
-  describe(".addConditions", function() {
+  xdescribe(".addConditions", function() {
     beforeEach(function() {
       $.isPresent.addCondition(function(object){
         return object === "123";
