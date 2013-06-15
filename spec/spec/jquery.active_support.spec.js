@@ -32,6 +32,22 @@ describe("$.isBlank", function() {
       expect( $.isBlank( $('div.foo_bar') ) ).toBeTruthy();
     });
   });
+
+  describe(".addConditions", function() {
+    beforeEach(function() {
+      $.isBlank.addCondition(function(object){
+        return object === "123";
+      });
+    });
+
+    it("should be blank", function() {
+      expect($.isBlank("123")).toBeTruthy();
+    });
+
+    it("should be empty", function() {
+      expect($.isEmpty("123")).toBeTruthy();
+    });
+  });
 });
 
 describe("$.isEmpty", function() {
@@ -72,6 +88,22 @@ describe("$.isPresent", function() {
 
     it("should be present", function() {
       expect( $.isPresent( $('div.foo_bar') ) ).toBeFalsy();
+    });
+  });
+
+  describe(".addConditions", function() {
+    beforeEach(function() {
+      $.isPresent.addCondition(function(object){
+        return object === "123";
+      });
+    });
+
+    it("should be present", function() {
+      expect($.isPresent("123")).toBeTruthy();
+    });
+
+    it("should not be empty", function() {
+      expect($.isNotEmpty("123")).toBeTruthy();
     });
   });
 });
@@ -168,5 +200,4 @@ describe("$.redirect", function() {
       });
     });
   });
-
 });

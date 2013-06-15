@@ -1,19 +1,42 @@
 (function($){
-  
+ 
   /*
     Evaluates if an object or element is blank
     @author http://github.com/jtarchie
     @return Boolean
   */
   $.isBlank = $.isEmpty = function(object) {
-    return (
-      ($.isPlainObject(object) && $.isEmptyObject(object)) ||
-      ($.isArray(object) && object.length == 0) ||
-      (object instanceof jQuery && object.length == 0) ||
-      ($.type(object) == "string" && $.trim(object) === "") ||
-      (!object)
-    );
+    var passed = false;
+    $.each($.isBlank._conditions, function(index, condition){
+      if( condition(object) ) passed = true;
+    })
+    return passed;
   };
+
+  $.isBlank._conditions = $.isEmpty._conditions = [
+    function(object){
+      return ($.isPlainObject(object) && $.isEmptyObject(object));
+    },
+    function(object){
+      return ($.isArray(object) && object.length == 0);
+    },
+    function(object){
+      return (object instanceof jQuery && object.length == 0);
+    },
+    function(object){
+      return ($.type(object) == "string" && $.trim(object) === "");
+    },
+    function(object){
+      return !object;
+    }
+  ];
+
+  $.isBlank.addCondition = $.isEmpty.addCondition = function(condition){
+    if( $.isFunction(condition) ){
+      $.isBlank._conditions.push(condition)
+      $.isEmpty._conditions.push(condition)
+    }
+  }
 
   /*
     Evaluates if an object or element is not blank
@@ -21,6 +44,13 @@
   */
   $.isPresent = $.isNotEmpty = function(){
     return !$.isBlank.apply(this, arguments);
+  }
+
+  $.isPresent.addCondition = $.isNotEmpty.addCondition = function(condition){
+    if( $.isFunction(condition) ){
+      $.isBlank._conditions.push(condition)
+      $.isEmpty._conditions.push(condition)
+    }
   }
 
   $.redirect = function(url, opt){
