@@ -13,6 +13,9 @@
     return passed;
   };
 
+  /*
+    Dynamically adds conditional bindings to the $.isBlank method
+  */
   $.isBlank._conditions = $.isEmpty._conditions = [
     function(object){
       return ($.isPlainObject(object) && $.isEmptyObject(object));
