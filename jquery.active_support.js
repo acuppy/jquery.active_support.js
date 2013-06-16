@@ -49,13 +49,6 @@
     return !$.isBlank.apply(this, arguments);
   }
 
-  $.isPresent.addCondition = $.isNotEmpty.addCondition = function(condition){
-    if( $.isFunction(condition) ){
-      $.isBlank._conditions.push(condition)
-      $.isEmpty._conditions.push(condition)
-    }
-  }
-
   $.redirect = function(url, opt){
     var opt = opt || {};
 
