@@ -29,7 +29,7 @@ Note: This is NOT the same function as a jQuery('selector').is(':blank').
     $.isPresent([])        //false
 
 === Testing
-To run the tests, clone the repository and open ./spec/SpecRunner.html in any browser.  For more info see http://pivotal.github.io/jasmine/
+To run the tests, clone the repository and open ./spec/SpecRunner.html in any browser.  For more info see https://jasmine.github.io/
 
 === Contributing
 I would like to expand the available utility/support functions.  Submit a pull request with your patch and the appropriate Jasmine test.  I'll gladly merge your changes into master :)
